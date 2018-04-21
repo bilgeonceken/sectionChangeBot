@@ -21,7 +21,7 @@ session.headers.update({
     })
 r = session.get(get_url)
 
-## Get hidden fields with that we need to send with the form
+## Get hidden fields that we need to send with the form
 soup = BS(r.text, "lxml")
 hidden_redir = soup.find("input",  {"name":"hidden_redir"})["value"]
 hidden_form_id = soup.find("input",  {"name":"hidden_form_id"})["value"]
